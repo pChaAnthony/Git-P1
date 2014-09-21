@@ -7,3 +7,7 @@ one:
 two:
   title: MyString
   detail: MyText
+  
+Ruby:
+  title: test from fixtures
+  detail: this is a detail entered at fixtures
