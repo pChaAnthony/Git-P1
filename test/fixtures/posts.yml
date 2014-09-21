@@ -8,6 +8,6 @@ two:
   title: MyString
   detail: MyText
   
-Ruby:
+ruby:
   title: test from fixtures
   detail: this is a detail entered at fixtures
