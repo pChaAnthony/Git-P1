@@ -1,7 +1,7 @@
 <h2> Your Collection </h2>
 <ul>
 	<% for item in @cart.line_items %>
-		<li> <%= item.post.title %> </li>
+		<li> <%= item.quantity %> &times; <%= item.post.title %> </li>
 	<% end %>
 </ul>
 

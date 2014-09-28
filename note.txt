@@ -1,3 +1,7 @@
+study books
+	The pragmatic bookshelf RailsPlayTime - https://pragprog.com/wikis/wiki/RailsPlayTime
+	Ruby on Rails ¹ê¾Ô¸t¸g - http://ihower.tw/rails3/index.html 
+
 CSS: will use this CSS template to build - http://getbootstrap.com/
 	Stack overflow suggest - (I like this way, no GEM install)
 	Download Bootstrap
@@ -41,18 +45,92 @@ Migration
 		end
 	end
 	NOTE: NO space!!! in "part_number:string"
-	Check status via:
-	rake db:migrate:status
+	Check status via: rake db:migrate:status
 	if typo before db up, just delete the migration file
 	if db up, do rake db:rollback
-	
+	rollback specific migration - rake db:migrate:down VERSION=20100905201547
+	rollback: reversible do |dir| is DIFFICULT to us, change to up and down, as:
+		class ChangeProductsPrice < ActiveRecord::Migration
+			def up
+				xxxxxx
+			end
+		 
+			def down
+				yyyyyy
+			end
+		end
+		
 Git: Github pcha.anthony@gmail.com an...04..
 	git add .
 	git commit -am "comments to add"
 	git push origin master
 	git status
 	
+Ruby operator
+	=> Hashrocket, arrow, fat comma
+		my_hash = { :key1 => 'my value', :key2 => 'other value' }
+	:& #symbol to proc
+		my_array = [ 'foo', 'bar']
+		new_array = my_array.collect(&:reverse)
+		new_array.each{ |element| puts element }
+		#-> oof
+		#-> rab
+	<=> #Spaceship operator
+		1 <=> 0
+		#-> 1
+		1 <=> 1
+		#-> 0
+		1 <=> 2
+		#-> -1
+	||= #t-square or short-circuit or
+		foo ||= 'bar'
+		puts foo
+		#-> bar
+	<< Shovel or left shift operator
+		# On arrays:
+		foo = []
+		foo << 'foo'
+		foo << 'bar'
+		foo << 'fizz' << 'buzz'
+		foo.each { |element| puts element }
+		#-> foo
+		#-> bar
+		#-> fizz
+		#-> buzz
+
+		# On strings:
+		my_string = 'foo'
+		my_string << 'bar'
+		puts my_string
+		# -> foobar
+
+		# On numbers
+		1 << 0
+		#-> 1
+		1 << 1
+		#-> 2
+		1 << 2
+		#-> 4
+		1 << 3
+		#-> 8
+
+Active record
+	associations - http://www.theodinproject.com/ruby-on-rails/active-record-associations
+		User.first.posts? :class_name? :foreign_key? 
+		association to automatically populate the foreign key
+		# Long version:
+		> user = User.first
+		> post = Post.create(:title => "sample", :user_id => user.id)
+		# Shorter version:
+		> user = User.first
+		> user.posts.create(:title => "sample")
+		# one of the ways that associations sometimes act like arrays:
+		> user = User.create(:name => "foobar")
+		> post = Post.new(:title => "sample")
+		> user.posts << post
 	
+Questions:
+	what "<<" mean... line_items << current_itme
 	
 	
 	
