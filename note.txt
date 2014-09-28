@@ -1,0 +1,58 @@
+CSS: will use this CSS template to build - http://getbootstrap.com/
+	Stack overflow suggest - (I like this way, no GEM install)
+	Download Bootstrap
+	Copy:
+		bootstrap/dist/css/bootstrap.css and bootstrap/dist/css/bootstrap.min.css
+		To: vendor/assets/stylesheets
+	Copy:
+		bootstrap/dist/js/bootstrap.js and bootstrap/dist/js/bootstrap.min.js
+		To: vendor/assets/javascripts
+	Update: app/assets/stylesheets/application.css by adding:
+		*= require bootstrap.min
+	Update: app/assets/javascripts/application.jsby adding:
+		//= require bootstrap.min
+	With this you can update bootstrap any time you want, don't need to wait gem to be updated. Also with this approach assets pipeline will use minified versions in production.
+	
+Rich Text Editor: 
+	Mercury - http://jejacks0n.github.io/mercury/
+	
+Ruby var
+	small_case = local var
+	@instance_var = instance var
+	@@class_var = Class var
+	$global_var = Global_var
+	
+naming
+	Controller 命名都是複數
+	View 命名都是複數
+	Model 用大寫、單數，沒有底線
+	file_name 檔名使用小寫、單數，用底線
+	line_items 資料庫表格名稱用小寫且為複數
+	
+Migration
+	adding/remove column:
+	migration name is of the form "AddXXXToYYY" or "RemoveXXXFromYYY" and is followed by a list of column names and types then a migration containing the appropriate add_column and remove_column statements will be created.
+	eg.
+	rails generate migration AddPartNumberToProducts part_number:string
+	=
+	class AddPartNumberToProducts < ActiveRecord::Migration
+		def change
+			add_column :products, :part_number, :string
+		end
+	end
+	NOTE: NO space!!! in "part_number:string"
+	Check status via:
+	rake db:migrate:status
+	if typo before db up, just delete the migration file
+	if db up, do rake db:rollback
+	
+Git: Github pcha.anthony@gmail.com an...04..
+	git add .
+	git commit -am "comments to add"
+	git push origin master
+	git status
+	
+	
+	
+	
+	
