@@ -1,9 +1,19 @@
-<h2> Your Collection </h2>
-<ul>
+<div class="cart_title"> Your Collection </div>
+<table>
 	<% for item in @cart.line_items %>
-		<li> <%= item.quantity %> &times; <%= item.post.title %> </li>
+		<tr>
+			<td> <%= item.quantity %> &times; </td>
+			<td> <%= item.post.title %> </td>
+		</tr>
 	<% end %>
-</ul>
+	
+	<tr class="total_line">
+		<td colspan="2"> Total </td>
+		<td class="total_cell"> <%= @cart.total_line %> </td>
+	</tr>
+</table>
+
+<%= button_to 'Empty Cart', @cart, :method => :delete, :confirm => 'Are you SURE!?' %>
 
 <p id="notice"><%= notice %></p>
 

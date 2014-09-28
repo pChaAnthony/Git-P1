@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  before_action :set_cart, only: [:show, :edit, :update, :destroy]
+  before_action :set_cart, only: [:edit, :update, :destroy]
 
   # GET /carts
   # GET /carts.json
@@ -10,6 +10,17 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
+	begin
+		@cart = Cart.find(params[:id])
+	rescue ActiveRecord::RecordNotFound
+		logger.error "Attempt to access invalid cart id: #{params[:id]}"
+		redirect_to blog_url, :notice => "invalid cart, don't change the URL"
+	else
+		respond_to do |format|
+			format.html # show.html.erb
+			format.xml { render :xml => @cart }
+		end
+	end
   end
 
   # GET /carts/new
@@ -55,8 +66,9 @@ class CartsController < ApplicationController
   # DELETE /carts/1.json
   def destroy
     @cart.destroy
+	session[:cart_id]=nil
     respond_to do |format|
-      format.html { redirect_to carts_url, notice: 'Cart was successfully destroyed.' }
+      format.html { redirect_to blog_url, notice: 'Your cart was successfully deleted and empty now.' }
       format.json { head :no_content }
     end
   end
@@ -64,8 +76,8 @@ class CartsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cart
-      @cart = Cart.find(params[:id])
-    end
+		@cart = Cart.find(params[:id])
+	end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cart_params

@@ -1,7 +1,12 @@
 study books
+	Rails agile web development with Rails 4th edition beta
 	The pragmatic bookshelf RailsPlayTime - https://pragprog.com/wikis/wiki/RailsPlayTime
 	Ruby on Rails 龟驹竧竒 - http://ihower.tw/rails3/index.html 
 
+Version
+	Ruby -v: 1.9.3p545 (2014-2-24) [i386-mingw32]
+	Rails -v: 4.1.6
+	
 CSS: will use this CSS template to build - http://getbootstrap.com/
 	Stack overflow suggest - (I like this way, no GEM install)
 	Download Bootstrap
@@ -26,7 +31,7 @@ Ruby var
 	@@class_var = Class var
 	$global_var = Global_var
 	
-naming
+Naming Convention
 	Controller ㏑常琌狡计
 	View ㏑常琌狡计
 	Model ノ糶虫计⊿Τ┏絬

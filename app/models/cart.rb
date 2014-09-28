@@ -11,4 +11,8 @@ class Cart < ActiveRecord::Base
 		end
 		current_item
 	end
+	
+	def total_line
+		line_items.to_a.sum { |item| 1}
+	end
 end
