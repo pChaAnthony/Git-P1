@@ -6,7 +6,12 @@
 
 <% @post.each do |post| %>
 	<div class="entry">
-		<h3><%= post.title %></h3>
+		<h3>
+			<div>
+				<%= truncate(post.title, length: 60) %>
+				<%= button_to 'Add to My Collection', line_items_path(:post_id => post) %>
+			</div>
+		</h3>
 		<%=sanitize post.detail %>
 	</div>
 <% end %>
