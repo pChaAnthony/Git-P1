@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+.locale {
+  float: right;
+  margin: -0.55em 0.1em;
+}

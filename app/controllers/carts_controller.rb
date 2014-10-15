@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
   before_action :set_cart, only: [:edit, :update, :destroy]
+  skip_before_filter :authorize
 
   # GET /carts
   # GET /carts.json

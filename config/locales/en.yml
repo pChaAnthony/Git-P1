@@ -19,5 +19,20 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
+en: 
+  layouts:
+    application:
+      title:  "Stella Blog Posts"
+      home:  "Home"
+      questions:  "Questions"
+      news:  "News"
+      contact:  "Contact"
+  blog:
+    index:
+      title_html: "Blog post here"
+      add_html: "Add to My Collection"
+  carts:
+    cart: 
+      title:  "Your Collection"
+      total:  "Total"
+      empty:  "Empty Cart"

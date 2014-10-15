@@ -1,12 +1,19 @@
 study books
 	Rails agile web development with Rails 4th edition beta
+		all samples code - http://intertwingly.net/projects/AWDwR4/
+		example online - http://intertwingly.net/projects/AWDwR4/checkdepot-41/
 	The pragmatic bookshelf RailsPlayTime - https://pragprog.com/wikis/wiki/RailsPlayTime
 	Ruby on Rails 實戰聖經 - http://ihower.tw/rails3/index.html 
-
+	** Ruby on Rails Tutorial Learn Rails by Example Michael Hartl - https://www.railstutorial.org/book/frontmatter
+		draft version - http://draft.railstutorial.org/book
+	
 Version
 	Ruby -v: 1.9.3p545 (2014-2-24) [i386-mingw32]
 	Rails -v: 4.1.6
 	
+Host service
+	App 上線至 Heroku
+			
 CSS: will use this CSS template to build - http://getbootstrap.com/
 	Stack overflow suggest - (I like this way, no GEM install)
 	Download Bootstrap
@@ -24,6 +31,14 @@ CSS: will use this CSS template to build - http://getbootstrap.com/
 	
 Rich Text Editor: 
 	Mercury - http://jejacks0n.github.io/mercury/
+	Masonry (CSS plugin for blog front layout page) - http://masonry.desandro.com/
+	
+Rails test:
+	rake test >> all test
+	rake test:benchmark >> performance
+	
+Rake:
+	Rake routes >> list routing info
 	
 Ruby var
 	small_case = local var
@@ -37,6 +52,14 @@ Naming Convention
 	Model 用大寫、單數，沒有底線
 	file_name 檔名使用小寫、單數，用底線
 	line_items 資料庫表格名稱用小寫且為複數
+	
+Template
+	<%= render :partial => "common/nav" %> 使用app/views/common/_nav.html.erb, or ignor common/ if same dir
+
+Debug
+	<%= debug XXX %>
+	<%= simple_format XXX.to_yaml %>
+	<%= XXX.inspect %>
 	
 Migration
 	adding/remove column:
@@ -133,6 +156,9 @@ Active record
 		> user = User.create(:name => "foobar")
 		> post = Post.new(:title => "sample")
 		> user.posts << post
+	
+Rails Plugin
+	Devise - authentication
 	
 Questions:
 	what "<<" mean... line_items << current_itme

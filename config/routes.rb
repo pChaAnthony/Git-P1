@@ -1,15 +1,20 @@
 Rails.application.routes.draw do
-  resources :line_items
+  get 'admin' => 'admin#index'
+  controller :sessions do
+	get 'login' => :new
+	post 'login' => :create
+	delete 'logout' => :destory
+  end
 
-  resources :carts
-
-  get 'blog/index'
-
-  resources :posts
-
-  get 'say/welcome'
-
-  get 'say/goodbye'
+  resources :users
+  
+  scope '(:locale)' do
+	resources :line_items
+	resources :carts
+	resources :posts
+	get 'blog/index'	
+	get 'say/welcome'
+	get 'say/goodbye'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -17,7 +22,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   
-  root 'blog#index', :as => 'blog'
+	root to: 'blog#index', as: 'blog', via: :all
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

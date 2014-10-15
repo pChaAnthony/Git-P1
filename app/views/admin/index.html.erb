@@ -1,0 +1,5 @@
+<h1>Admin#index welcome</h1>
+
+<% login_user = User.find_by(id: session[:user_id]) %>
+
+User ID:<%= login_user.id %> User: <%= login_user.user %> Login at <%= Time.now %>

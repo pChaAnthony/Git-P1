@@ -2,14 +2,14 @@
 	<p id="notice"><%= notice %></p>
 <% end %>
 
-<h1>Blog Posted</h1>
+<h1><%= t('.title_html') %></h1>
 
 <% @post.each do |post| %>
 	<div class="entry">
 		<h3>
 			<div>
 				<%= truncate(post.title, length: 60) %>
-				<%= button_to 'Add to My Collection', line_items_path(:post_id => post) %>
+				<%= button_to t('.add_html'), line_items_path(:post_id => post),:remote => true %>
 			</div>
 		</h3>
 		<%=sanitize post.detail %>
