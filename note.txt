@@ -5,7 +5,8 @@ study books
 	The pragmatic bookshelf RailsPlayTime - https://pragprog.com/wikis/wiki/RailsPlayTime
 	Ruby on Rails ¹ê¾Ô¸t¸g - http://ihower.tw/rails3/index.html 
 	** Ruby on Rails Tutorial Learn Rails by Example Michael Hartl - https://www.railstutorial.org/book/frontmatter
-		draft version - http://draft.railstutorial.org/book
+		draft version - http://draft.railstutorial.org/book - 3rd edition is good.
+		background-color: #ABAE64
 	
 Version
 	Ruby -v: 1.9.3p545 (2014-2-24) [i386-mingw32]
@@ -94,6 +95,8 @@ Git: Github pcha.anthony@gmail.com an...04..
 	git push origin master
 	git status
 	
+c9.io: pcha.anthony@gmail.com an..04..
+	
 Ruby operator
 	=> Hashrocket, arrow, fat comma
 		my_hash = { :key1 => 'my value', :key2 => 'other value' }
@@ -159,6 +162,9 @@ Active record
 	
 Rails Plugin
 	Devise - authentication
+	
+Rake:
+	description - http://jasonseifer.com/2010/04/06/rake-tutorial
 	
 Questions:
 	what "<<" mean... line_items << current_itme
